@@ -3,6 +3,7 @@ package com.sudin.reactive.reactivemongospring.controllers;
 import com.sudin.reactive.reactivemongospring.model.Employee;
 import com.sudin.reactive.reactivemongospring.model.EmployeeEvent;
 import com.sudin.reactive.reactivemongospring.repository.EmployeeRepository;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,11 +32,11 @@ public class EmployeeController {
     }
 
     @GetMapping("/{id}")
-    public Mono<Employee> getId(@PathVariable final String empId) {
+    public Mono<Employee> getId(@PathVariable("id") final String empId) {
         return employeeRepository.findById(empId);
     }
 
-    @GetMapping("/{id}/events")
+    @GetMapping(value = "/{id}/events",produces = MediaType.TEXT_EVENT_STREAM_VALUE)
     public Flux<EmployeeEvent> getEvents(@PathVariable("id") final String empId) {
         return employeeRepository.findById(empId)
                 .flatMapMany(employee -> {
