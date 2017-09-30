@@ -6,6 +6,9 @@ To make the code simpler lombok feature has been used.
 
 You need mongodb installed on your machine to run this application.
 
+Make sure to remove all the previous version installation of mongodb for clean installation.
+To remove all the previous version hit this command "sudo apt-get remove mongodb* --purge"
+
 Follow the instructions from this site if you want to install mongodb on you machine.
 
 https://sainirahul.wordpress.com/2015/04/02/installing-mongodb-on-linux/
