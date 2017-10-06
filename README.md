@@ -31,4 +31,13 @@ Use these commands to check and run your mongodb server.
 
 Also you can go to the var/log/mongodb and check for the log file. You can find port number and some of the logs in the text file.
 
+#Router Function in Spring 5
+
+RouterFunction serves as an alternative to the @RequestMapping annotation. It’s used for routing incoming requests to handler functions
+
+In this particular example the MVC style are commented out to use the new Router function of Spring5.
+
+To use the MVC style you need to remove the comment in the controller and comment the router function part.
+
+
 
